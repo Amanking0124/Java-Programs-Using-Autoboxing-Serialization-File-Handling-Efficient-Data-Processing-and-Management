@@ -1,0 +1,31 @@
+// Amandeep Singh
+// UID: 23BCS11794
+// Part (a): Sum of Integers Using Autoboxing and Unboxing
+
+import java.util.*;
+
+public class SumUsingAutoboxing {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>(); // Collection using autoboxing
+
+        System.out.println("Enter integers separated by spaces:");
+        String input = sc.nextLine();
+        String[] values = input.split(" ");
+
+        // Parsing and autoboxing
+        for (String val : values) {
+            Integer num = Integer.parseInt(val); // String -> int -> Integer (Autoboxing)
+            numbers.add(num);
+        }
+
+        int sum = 0;
+        // Unboxing during addition
+        for (Integer num : numbers) {
+            sum += num; // Unboxing Integer -> int
+        }
+
+        System.out.println("Sum of entered integers = " + sum);
+        sc.close();
+    }
+}
